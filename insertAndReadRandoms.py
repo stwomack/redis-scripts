@@ -6,7 +6,7 @@ import os
 redis_ce = redis.Redis(host='35.193.227.53', port=6379, db=0, password='redis123')
 
 # Connect to Redis Enterprise (replica)
-redis_enterprise = redis.Redis(host='35.193.227.53', port=6379, db=0, password='redis123')
+redis_enterprise = redis.Redis(host='34.170.130.167', port=18874, db=0)
 
 # Use a sorted set for efficient insertion and retrieval of ordered data
 key_name = "random_values"
