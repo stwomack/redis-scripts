@@ -1,10 +1,19 @@
+from dotenv import load_dotenv
 import redis
+import random
+import os
+
+load_dotenv()  # Load environment variables from .env
+
+REDIS_CE_HOST = os.environ.get('REDIS_CE_HOST')
+REDIS_CE_PASSWORD = os.environ.get('REDIS_CE_PASSWORD')
+REDIS_ENTERPRISE_HOST = os.environ.get('REDIS_ENTERPRISE_HOST')
 
 # Connect to Redis CE (source)
-redis_ce = redis.Redis(host='35.193.227.53', port=6379, db=0, password='redis123')
+redis_ce = redis.Redis(host=REDIS_CE_HOST, port=6379, db=0, password=REDIS_CE_PASSWORD)
 
 # Connect to Redis Enterprise (replica)
-redis_enterprise = redis.Redis(host='34.170.130.167', port=18874, db=0)
+redis_enterprise = redis.Redis(host=REDIS_ENTERPRISE_HOST, port=18874, db=0)
 
 # Insert values 1-100 into Redis CE
 for i in range(1, 101):
