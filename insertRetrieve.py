@@ -29,8 +29,7 @@ ordered_values_reversed = re.zrevrange('my_numbers_ordered', 0, -1)
 print("--------------------------------")
 print("Ordered Values in reverse order:")
 print("--------------------------------")
-for value in ordered_values_reversed:
-    print(value.decode('utf-8'))
+print(ordered_values_reversed)
 
 # Insert 100 random values into another Sorted Set
 random_values = set()  # Use a set to ensure unique random values
